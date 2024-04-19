@@ -33,9 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({ programs, onProgramClick }) => {
   return (
     <div className="carousel">
       <div className="carousel__container">
-        {visiblePrograms?.map((program, index) => {
-          console.log("index", index)
-          console.log('activeIndex', activeIndex)
+        {visiblePrograms?.map((program) => {
           return (
           <div
             key={program.id}
