@@ -122,6 +122,45 @@ body {
   color: #606060
 }
 
+.home__skeleton {
+  overflow-x: visible;
+}
+
+.home__skeleton__item {
+  width: 12.5em;
+  height: 18.75em;
+  background-color: #606060;
+  margin: 0 10px;
+  animation: skeleton-loading 1s infinite alternate;
+}
+
+.program__skeleton__image {
+  background-color: #606060;
+  height: 18.5em;
+  animation: skeleton-loading 1s infinite alternate;
+}
+
+.program__skeleton__title {
+  background-color: #606060;
+  height: 1.875em;
+  width: 9.375em;
+  animation: skeleton-loading 1s infinite alternate;
+}
+
+.program__skeleton__details {
+  background-color: #606060;
+  height: 1.5625em;
+  width: 21.875em;
+  animation: skeleton-loading 1s infinite alternate;
+}
+
+.program__skeleton__description {
+  background-color: #606060;
+  height: 6.25em;
+  width: 31.25em;
+  animation: skeleton-loading 1s infinite alternate;
+}
+
 /* Responsive Media Queries */
 @media screen and (max-width: 67.5em) {
   .program__container {
@@ -201,5 +240,15 @@ body {
 
   .header__navigation li:first-child {
     margin-left: 0;
+  }
+}
+
+/* Animations */
+@keyframes skeleton-loading {
+  0% {
+    background-color: #606060;
+  }
+  100% {
+    background-color: #f5f5f5;
   }
 }

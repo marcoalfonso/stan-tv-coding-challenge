@@ -5,8 +5,9 @@ Front End coding challenge for Stan
 
 1. Clone the repository: `git clone https://github.com/marcoalfonso/stan-tv-coding-challenge.git`
 2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
-4. Open the application in your browser at `http://localhost:9000/`
+3. Build application: `npm run build`
+4. Start the development server: `npm start`
+5. Open the application in your browser at `http://localhost:9000/`
 
 ## Running Tests
 
