@@ -31,7 +31,7 @@ const Carousel: React.FC<CarouselProps> = ({ programs, onProgramClick }) => {
   const visiblePrograms = programs?.slice(activeIndex, activeIndex + 6);
 
   return (
-    <div className="carousel">
+    <div className="carousel" data-testid="carousel">
       <div className="carousel__container">
         {visiblePrograms?.map((program) => {
           return (
