@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Carousel from '../components/Carousel';
-import { ProgramData } from '../types';
 import Header from '../components/Header';
+import HomeSkeleton from '../components/HomeSkeleton';
+import { ProgramData } from '../types';
 
 const Home: React.FC = () => {
   const [programs, setPrograms] = useState<ProgramData[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,8 +21,10 @@ const Home: React.FC = () => {
       const response = await fetch('data/data.json');
       const data = await response.json();
       setPrograms(data);
+      setLoading(false);
     } catch (error) {
       setError('An unknown error occurred. please try again later');
+      setLoading(false);
     }
   };
 
@@ -32,10 +36,15 @@ const Home: React.FC = () => {
     <div className="home">
       <Header />
       {error && <p className="error">{error}</p>}
-      <Carousel
-        programs={programs}
-        onProgramClick={handleProgramClick}
-      />
+      {loading ? (
+        <HomeSkeleton />
+      ) : (
+        <Carousel
+          programs={programs}
+          onProgramClick={handleProgramClick}
+        />
+      )}
+      
     </div>
   );
 };
