@@ -55,6 +55,7 @@ body {
   align-items: center;
   overflow-x: hidden;
   margin-top: 1.25em;
+  min-width: 75em;
 }
 
 .carousel__item {

@@ -46,7 +46,7 @@ const Program: React.FC = () => {
   }, []);
 
   return (
-    <div className="program">
+    <div className="program" data-testid="program">
       <Header />
       {error && <p className="error">{error}</p>}
       {loading ? (
